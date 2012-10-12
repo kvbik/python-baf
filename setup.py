@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from os import path
 import imp
 
@@ -26,7 +26,7 @@ setup(
     author='Jakub Vysoky',
     author_email='jakub.vysoky@gmail.com',
     url='https://github.com/kvbik/python-baf',
-    packages=['baf'],
+    packages=find_packages(),
     entry_points={'console_scripts': ['baf = baf.manage:main']},
     install_requires=install_requires,
     include_package_data=True,
