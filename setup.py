@@ -1,10 +1,14 @@
-from distutils.core import setup
+from setuptools import setup
 from os import path
 
 base = path.dirname(__file__)
 
 f = open(path.join(base, 'README.rst'))
 long_description = f.read().strip()
+f.close()
+
+f = open(path.join(base, 'requirements.txt'))
+install_requires = f.read().strip()
 f.close()
 
 setup(
@@ -17,5 +21,6 @@ setup(
     author_email='jakub.vysoky@gmail.com',
     url='https://github.com/kvbik/python-baf',
     packages=['baf'],
+    install_requires=install_requires,
 )
 
