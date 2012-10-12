@@ -23,5 +23,7 @@ setup(
     packages=['baf'],
     entry_points={'console_scripts': ['baf = baf.manage:main']},
     install_requires=install_requires,
+    include_package_data=True,
+    zip_safe=False,
 )
 

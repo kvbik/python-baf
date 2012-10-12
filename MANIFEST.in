@@ -1,0 +1,4 @@
+recursive-include baf *
+global-exclude *.py[co]
+include README.rst
+include requirements.txt
