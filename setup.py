@@ -21,6 +21,7 @@ setup(
     author_email='jakub.vysoky@gmail.com',
     url='https://github.com/kvbik/python-baf',
     packages=['baf'],
+    entry_points={'console_scripts': ['baf = baf.manage:main']},
     install_requires=install_requires,
 )
 
