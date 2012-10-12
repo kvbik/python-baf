@@ -1,5 +1,6 @@
 from setuptools import setup
 from os import path
+import imp
 
 base = path.dirname(__file__)
 
@@ -11,9 +12,14 @@ f = open(path.join(base, 'requirements.txt'))
 install_requires = f.read().strip()
 f.close()
 
+f = open(path.join(base, 'baf', 'version.py'))
+version = imp.new_module('version')
+exec(f.read(), version.__dict__)
+f.close()
+
 setup(
     name='baf',
-    version='1.0',
+    version=version.__versionstr__,
     description='example packaging layout',
     long_description=long_description,
     license='BSD',
