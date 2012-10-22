@@ -9,7 +9,7 @@ long_description = f.read().strip()
 f.close()
 
 f = open(path.join(base, 'requirements.txt'))
-install_requires = f.read().strip()
+install_requires = [ r.strip() for r in f.readlines() if '#egg=' not in r ]
 f.close()
 
 f = open(path.join(base, 'baf', 'version.py'))
